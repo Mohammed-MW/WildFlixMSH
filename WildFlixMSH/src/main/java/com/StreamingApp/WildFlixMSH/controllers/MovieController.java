@@ -1,3 +1,4 @@
+/*
 package com.StreamingApp.WildFlixMSH.controllers;
 import com.StreamingApp.WildFlixMSH.models.Movie;
 import com.StreamingApp.WildFlixMSH.services.MovieService;
@@ -34,7 +35,9 @@ public class MovieController {
         Movie movieToUpdate = movieService.getMovieById(id).get();
         movieToUpdate.setTitle(movie.getTitle());
         movieToUpdate.setDescription(movie.getDescription());
-        /*movieToUpdate.setCategories(movie.getCategories());*/
+        */
+/*movieToUpdate.setCategories(movie.getCategories());*//*
+
         movieToUpdate.setUrl(movie.getUrl());
         movieToUpdate.setDateOfRelease(movie.getDateOfRelease());
         movieToUpdate.setIsPrivate(movie.getIsPrivate());
@@ -42,3 +45,4 @@ public class MovieController {
     }
 
 }
+*/

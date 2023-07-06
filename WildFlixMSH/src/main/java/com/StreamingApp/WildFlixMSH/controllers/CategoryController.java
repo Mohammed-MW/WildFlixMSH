@@ -1,3 +1,4 @@
+/*
 package com.StreamingApp.WildFlixMSH.controllers;
 
 import com.StreamingApp.WildFlixMSH.models.Category;
@@ -64,3 +65,4 @@ public class CategoryController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }
+*/

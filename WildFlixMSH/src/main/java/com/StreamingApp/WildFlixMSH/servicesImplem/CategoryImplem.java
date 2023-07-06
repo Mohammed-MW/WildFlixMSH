@@ -1,8 +1,8 @@
 package com.StreamingApp.WildFlixMSH.servicesImplem;
 
-import com.StreamingApp.WildFlixMSH.models.Category;
+/*import com.StreamingApp.WildFlixMSH.models.Category;
 import com.StreamingApp.WildFlixMSH.repositories.CategoryRepository;
-import com.StreamingApp.WildFlixMSH.services.CategoryService;
+import com.StreamingApp.WildFlixMSH.services.CategoryService;*/
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+/*
 @Service
 public class CategoryImplem implements CategoryService {
 
@@ -50,4 +51,5 @@ public class CategoryImplem implements CategoryService {
         categoryRepository.deleteById(id);
     }
 }
+*/
 
