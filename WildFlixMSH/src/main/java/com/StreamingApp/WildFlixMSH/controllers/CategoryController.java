@@ -12,9 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;
-import java.util.Optional;
-
-import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 
 @Controller
@@ -36,9 +33,12 @@ public class CategoryController {
     }
 
     @GetMapping("/admin/categorie/{id}")
-    public ResponseEntity<Optional<Category>> findById(@RequestBody Long id){
-        Optional<Category> findcatId = categoryService.findById(id);
-        return new ResponseEntity<>(findcatId, HttpStatus.OK);
+    public ResponseEntity<?> findById(@PathVariable Long id){
+        Category category = categoryService.findById(id);
+        if (category!=null)
+            return new  ResponseEntity<Category>(category, HttpStatus.OK);
+        else
+            return new ResponseEntity<String>("Categorie not found", HttpStatus.NOT_FOUND);
     }
 
 

@@ -23,8 +23,8 @@ public class Category {
 
 
 
-    /*@ManyToMany(mappedBy = "categories")
-    private List<Video> movie = new ArrayList<>();*/
+    @ManyToMany(mappedBy = "categories")
+    private List<Movie> movie = new ArrayList<>();
 
 
 }
