@@ -1,5 +1,6 @@
 package com.StreamingApp.WildFlixMSH.repositories;
 
+import com.StreamingApp.WildFlixMSH.models.Category;
 import com.StreamingApp.WildFlixMSH.models.Movie;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -12,4 +13,5 @@ public interface MovieRepository extends JpaRepository<Movie,Long> {
     Optional<Movie> findById(Long id);
     List<Movie> findAll();
     void deleteById(Long id);
+
 }

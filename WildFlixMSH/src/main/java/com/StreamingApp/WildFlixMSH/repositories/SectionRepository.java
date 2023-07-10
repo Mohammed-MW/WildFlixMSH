@@ -1,5 +1,6 @@
 package com.StreamingApp.WildFlixMSH.repositories;
 
+import com.StreamingApp.WildFlixMSH.models.Category;
 import com.StreamingApp.WildFlixMSH.models.Movie;
 import com.StreamingApp.WildFlixMSH.models.Section;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -13,6 +14,7 @@ public interface SectionRepository extends JpaRepository <Section, Long> {
     Optional<Section> findById(Long id);
     List<Section> findAll();
     void deleteById(Long id);
+
 
 
 }

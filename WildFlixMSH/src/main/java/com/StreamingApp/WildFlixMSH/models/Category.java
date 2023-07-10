@@ -17,14 +17,10 @@ public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String categoriename;
 
-
-
-
-    /*@ManyToMany(mappedBy = "categories")
-    private List<Video> movie = new ArrayList<>();*/
+    @ManyToMany(mappedBy = "categories")
+    private List<Movie> movies = new ArrayList<>();
 
 
 }

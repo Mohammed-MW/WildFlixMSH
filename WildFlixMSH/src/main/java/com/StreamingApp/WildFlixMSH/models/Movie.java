@@ -24,17 +24,13 @@ public class Movie {
     private String url;
     private Boolean isPrivate;
 
-    /*private  Teaser teaser;*/
 
     @ManyToMany
-    @JoinTable(name="movie_categorie",
+    @JoinTable(name="movie_categories",
             joinColumns = @JoinColumn ( name="movie_id"),
-            inverseJoinColumns = @JoinColumn(name = "categorie_id"))
-    private List<Categorie> categories = new ArrayList<>();
+            inverseJoinColumns = @JoinColumn(name = "categories_id"))
+    private List<Category> categories = new ArrayList<>();
 
 
-    /* Coté mohammed
-    @ManyToMany(mappedBy = "categories")
-    private List<Movie> movies = new ArrayList<>();*/
 
 }
