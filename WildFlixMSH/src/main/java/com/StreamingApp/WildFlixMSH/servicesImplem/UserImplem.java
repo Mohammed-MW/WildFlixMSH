@@ -6,13 +6,14 @@ import com.StreamingApp.WildFlixMSH.models.User;
 import com.StreamingApp.WildFlixMSH.repositories.RoleRepository;
 import com.StreamingApp.WildFlixMSH.repositories.UserRepository;
 import com.StreamingApp.WildFlixMSH.services.UserService;
-import jakarta.transaction.Transactional;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -26,15 +27,22 @@ public class UserImplem implements UserService {
     @Autowired
     RoleRepository roleRepository;
     @Autowired
-    JwtService jwtService;
-    private final PasswordEncoder passwordEncoder;
-    private final AuthenticationManager authenticationManager;
+    PasswordEncoder passwordEncoder;
+    @Autowired
+    AuthenticationManager authenticationManager;
+        @Autowired
+        public UserImplem(UserRepository userRepository, RoleRepository roleRepository, PasswordEncoder passwordEncoder, AuthenticationManager authenticationManager) {
+            this.userRepository = userRepository;
+            this.roleRepository = roleRepository;
+            this.passwordEncoder = passwordEncoder;
+            this.authenticationManager = authenticationManager;
+
+    }
 
     @Override
     public User createUser(User user) {
-        String password = user.getPassword();
-        String passwordEncoded = passwordEncoder.encode(password);
-        user.setPassword(passwordEncoded);
+        String encodedPassword = passwordEncoder.encode(user.getPassword());
+        user.setPassword(encodedPassword);
         return userRepository.save(user);
     }
 
@@ -44,8 +52,22 @@ public class UserImplem implements UserService {
     }
 
     @Override
+    public Optional<User> getUserById(long id) {
+        return Optional.empty();
+    }
+
+    @Override
+        public Optional<User> getUserById(Long id) {
+            return userRepository.findById(id);
+            }
+
+    @Override
     public Optional<User> getUserByEmail(String email) {
         return userRepository.findByEmail(email);
+    }
+    @Override
+    public void deleteUser(Long id) {
+        userRepository.deleteById(id);
     }
 
     @Override

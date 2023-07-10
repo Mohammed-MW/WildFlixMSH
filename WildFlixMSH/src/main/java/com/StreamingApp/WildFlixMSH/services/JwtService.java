@@ -1,4 +1,4 @@
-package com.StreamingApp.WildFlixMSH.servicesImplem;
+package com.StreamingApp.WildFlixMSH.services;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

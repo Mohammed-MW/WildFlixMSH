@@ -24,7 +24,7 @@ public class User implements UserDetails {
 
     private String firstName;
 
-    private String LastName;
+    private String lastName;
 
     private Date birthday;
 
@@ -44,7 +44,7 @@ public class User implements UserDetails {
             @JoinColumn(name = "role_id")
     }
     )
-    List<Role> roles = new ArrayList<>();
+   private List<Role> roles = new ArrayList<>();
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<GrantedAuthority> grantedAuthorities = new ArrayList<>();

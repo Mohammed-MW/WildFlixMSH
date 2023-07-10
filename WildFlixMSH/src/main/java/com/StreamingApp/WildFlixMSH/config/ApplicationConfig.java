@@ -1,7 +1,6 @@
 package com.StreamingApp.WildFlixMSH.config;
 
 import com.StreamingApp.WildFlixMSH.repositories.UserRepository;
-import com.StreamingApp.WildFlixMSH.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationManager;
