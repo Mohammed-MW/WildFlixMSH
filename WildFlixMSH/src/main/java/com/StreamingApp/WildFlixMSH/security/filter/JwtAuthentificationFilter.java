@@ -1,5 +1,5 @@
 package com.StreamingApp.WildFlixMSH.security.filter;
-import com.StreamingApp.WildFlixMSH.services.JwtService;
+import com.StreamingApp.WildFlixMSH.servicesImplem.JwtService;
 import com.wcs.security.serviceImplem.JwtService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

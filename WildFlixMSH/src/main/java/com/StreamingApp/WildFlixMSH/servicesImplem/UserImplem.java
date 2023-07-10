@@ -6,7 +6,6 @@ import com.StreamingApp.WildFlixMSH.models.User;
 import com.StreamingApp.WildFlixMSH.repositories.RoleRepository;
 import com.StreamingApp.WildFlixMSH.repositories.UserRepository;
 import com.StreamingApp.WildFlixMSH.services.EmailService;
-import com.StreamingApp.WildFlixMSH.services.JwtService;
 import com.StreamingApp.WildFlixMSH.services.UserService;
 
 import jakarta.transaction.Transactional;
@@ -31,8 +30,7 @@ public class UserImplem implements UserService {
     EmailService emailService;
     @Autowired
     JwtService jwtService;
-    private final PasswordEncoder passwordEncoder;
-    private final
+    private final  PasswordEncoder passwordEncoder;
     private final AuthenticationManager authenticationManager;
 
     @Override

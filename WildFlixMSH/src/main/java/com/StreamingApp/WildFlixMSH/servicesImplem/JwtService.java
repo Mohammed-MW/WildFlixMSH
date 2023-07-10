@@ -1,4 +1,4 @@
-package com.StreamingApp.WildFlixMSH.services;
+package com.StreamingApp.WildFlixMSH.servicesImplem;
 
 import org.springframework.stereotype.Service;
 
