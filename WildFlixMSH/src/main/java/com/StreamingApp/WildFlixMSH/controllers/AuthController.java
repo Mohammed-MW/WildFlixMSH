@@ -1,11 +1,10 @@
 package com.StreamingApp.WildFlixMSH.controllers;
-import org.springframework.http.ResponseEntity;
+import com.StreamingApp.WildFlixMSH.enums.RoleName;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import com.StreamingApp.WildFlixMSH.models.User;
 import com.StreamingApp.WildFlixMSH.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
@@ -19,7 +18,7 @@ public class AuthController {
     @PostMapping("/sign-up-user")
     void createUser(@RequestBody User user){
         User result = userService. createUser(user);
-        userService.addRoleToUser(result.getEmail(), RoleName.USER);
+        userService.addRoleToUser(result.getEmail(), RoleName.USER );
     }
 
     @PostMapping("/sign-up-admin")
