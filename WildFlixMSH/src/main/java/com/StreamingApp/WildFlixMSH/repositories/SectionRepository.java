@@ -1,3 +1,4 @@
+/*
 package com.StreamingApp.WildFlixMSH.repositories;
 
 import com.StreamingApp.WildFlixMSH.models.Movie;
@@ -16,3 +17,4 @@ public interface SectionRepository extends JpaRepository <Section, Long> {
 
 
 }
+*/

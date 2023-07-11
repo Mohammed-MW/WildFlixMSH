@@ -1,3 +1,4 @@
+/*
 package com.StreamingApp.WildFlixMSH.controllers;
 import com.StreamingApp.WildFlixMSH.models.Section;
 import com.StreamingApp.WildFlixMSH.services.SectionService;
@@ -39,3 +40,4 @@ public class SectionController {
         return Optional.ofNullable(sectionService.createSection(sectionToUpdate));
     }
 }
+*/

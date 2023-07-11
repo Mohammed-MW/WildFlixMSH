@@ -1,3 +1,4 @@
+/*
 package com.StreamingApp.WildFlixMSH.models;
 
 import jakarta.persistence.*;
@@ -24,7 +25,9 @@ public class Movie {
     private String url;
     private Boolean isPrivate;
 
-    /*private  Teaser teaser;*/
+    */
+/*private  Teaser teaser;*//*
+
 
     @ManyToMany
     @JoinTable(name="movie_categorie",
@@ -33,8 +36,11 @@ public class Movie {
     private List<Categorie> categories = new ArrayList<>();
 
 
-    /* Coté mohammed
+    */
+/* Coté mohammed
     @ManyToMany(mappedBy = "categories")
-    private List<Movie> movies = new ArrayList<>();*/
+    private List<Movie> movies = new ArrayList<>();*//*
+
 
 }
+*/

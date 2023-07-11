@@ -1,3 +1,4 @@
+/*
 package com.StreamingApp.WildFlixMSH.services;
 
 import com.StreamingApp.WildFlixMSH.models.Category;
@@ -15,3 +16,4 @@ public interface CategoryService {
 
     Optional<Category> findById(Long id);
 }
+*/

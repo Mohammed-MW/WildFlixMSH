@@ -1,3 +1,4 @@
+/*
 package com.StreamingApp.WildFlixMSH.services;
 import com.StreamingApp.WildFlixMSH.models.Movie;
 import java.util.List;
@@ -10,3 +11,4 @@ public interface MovieService {
     void deleteMovie (Long id);
 
 }
+*/
