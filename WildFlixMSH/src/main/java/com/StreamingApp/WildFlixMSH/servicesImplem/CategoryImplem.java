@@ -1,7 +1,10 @@
 package com.StreamingApp.WildFlixMSH.servicesImplem;
 
 import com.StreamingApp.WildFlixMSH.models.Category;
+import com.StreamingApp.WildFlixMSH.models.Movie;
+import com.StreamingApp.WildFlixMSH.models.Section;
 import com.StreamingApp.WildFlixMSH.repositories.CategoryRepository;
+import com.StreamingApp.WildFlixMSH.repositories.MovieRepository;
 import com.StreamingApp.WildFlixMSH.services.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -14,6 +17,9 @@ import java.util.Optional;
 public class CategoryImplem implements CategoryService {
 
     private final CategoryRepository categoryRepository;
+
+    @Autowired
+    MovieRepository movieRepository;
 
     @Autowired
     public CategoryImplem(CategoryRepository categoryRepository) {
@@ -40,6 +46,7 @@ public class CategoryImplem implements CategoryService {
     }
 
 
+
     @Override
     public Category updateCategory(Long id, Category category) {
         Category existingCategory = categoryRepository.findById(id).orElse(null);
@@ -49,6 +56,9 @@ public class CategoryImplem implements CategoryService {
         }
         return null;
     }
+
+
+
 
     @Override
     public void deleteCategory(Long id) {

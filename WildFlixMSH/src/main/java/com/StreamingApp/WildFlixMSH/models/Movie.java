@@ -25,7 +25,6 @@ public class Movie {
     private String url;
     private Boolean isPrivate;
 
-    /*private  Teaser teaser;*/
 
     @ManyToMany
     @JoinTable(name="movie_categorie",
@@ -34,8 +33,5 @@ public class Movie {
     private List<Category> categories = new ArrayList<>();
 
 
-    /* Coté mohammed
-    @ManyToMany(mappedBy = "categories")
-    private List<Movie> movies = new ArrayList<>();*/
 
 }

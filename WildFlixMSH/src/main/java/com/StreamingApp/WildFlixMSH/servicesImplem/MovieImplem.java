@@ -1,6 +1,4 @@
 package com.StreamingApp.WildFlixMSH.servicesImplem;
-import com.StreamingApp.WildFlixMSH.enums.CategoryName;
-import com.StreamingApp.WildFlixMSH.models.Category;
 import com.StreamingApp.WildFlixMSH.models.Movie;
 import com.StreamingApp.WildFlixMSH.repositories.CategoryRepository;
 import com.StreamingApp.WildFlixMSH.repositories.MovieRepository;

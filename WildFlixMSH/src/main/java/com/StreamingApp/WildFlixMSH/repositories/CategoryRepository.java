@@ -1,6 +1,5 @@
 package com.StreamingApp.WildFlixMSH.repositories;
 
-import com.StreamingApp.WildFlixMSH.enums.CategoryName;
 import com.StreamingApp.WildFlixMSH.models.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 
