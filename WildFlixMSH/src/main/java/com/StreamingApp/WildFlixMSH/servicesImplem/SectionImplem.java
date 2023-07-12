@@ -1,4 +1,3 @@
-/*
 package com.StreamingApp.WildFlixMSH.servicesImplem;
 import com.StreamingApp.WildFlixMSH.models.Section;
 import com.StreamingApp.WildFlixMSH.repositories.SectionRepository;
@@ -34,4 +33,4 @@ public class SectionImplem implements SectionService {
 
     }
 }
-*/
+

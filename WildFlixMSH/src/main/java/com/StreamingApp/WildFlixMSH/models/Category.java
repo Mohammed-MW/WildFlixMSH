@@ -1,4 +1,3 @@
-/*
 package com.StreamingApp.WildFlixMSH.models;
 
 import jakarta.persistence.*;
@@ -22,13 +21,10 @@ public class Category {
     private String categoriename;
 
 
-
-
-    */
-/*@ManyToMany(mappedBy = "categories")
-    private List<Video> movie = new ArrayList<>();*//*
+    @ManyToMany(mappedBy = "categories")
+    private List<Movie> movie = new ArrayList<>();
 
 
 
 }
-*/
+

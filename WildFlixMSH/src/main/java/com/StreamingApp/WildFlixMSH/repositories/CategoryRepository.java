@@ -1,4 +1,4 @@
-/*
+
 package com.StreamingApp.WildFlixMSH.repositories;
 
 import com.StreamingApp.WildFlixMSH.models.Category;
@@ -8,4 +8,4 @@ public interface CategoryRepository extends JpaRepository<Category, Long> {
 
 
 }
-*/
+

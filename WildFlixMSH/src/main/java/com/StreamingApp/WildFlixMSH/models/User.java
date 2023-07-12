@@ -33,6 +33,9 @@ public class User implements UserDetails {
 
     private String password;
 
+    private int verificationEmailCode;
+    private boolean isEmailVerified = false;
+
 
     @ManyToMany (fetch = FetchType.EAGER)
 

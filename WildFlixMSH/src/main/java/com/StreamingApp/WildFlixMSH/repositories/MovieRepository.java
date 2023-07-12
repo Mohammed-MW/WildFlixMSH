@@ -1,4 +1,3 @@
-/*
 package com.StreamingApp.WildFlixMSH.repositories;
 
 import com.StreamingApp.WildFlixMSH.models.Movie;
@@ -14,4 +13,4 @@ public interface MovieRepository extends JpaRepository<Movie,Long> {
     List<Movie> findAll();
     void deleteById(Long id);
 }
-*/
+

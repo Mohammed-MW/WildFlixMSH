@@ -1,4 +1,3 @@
-/*
 package com.StreamingApp.WildFlixMSH.services;
 import com.StreamingApp.WildFlixMSH.models.Section;
 import java.util.List;
@@ -11,4 +10,4 @@ public interface SectionService {
     List<Section> getAllSections();
     void deleteSection (Long id);
 }
-*/
+

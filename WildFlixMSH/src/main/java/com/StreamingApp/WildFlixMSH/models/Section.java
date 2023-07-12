@@ -1,4 +1,3 @@
-/*
 package com.StreamingApp.WildFlixMSH.models;
 
 import jakarta.persistence.*;
@@ -32,4 +31,4 @@ public class Section {
 
 
 }
-*/
+

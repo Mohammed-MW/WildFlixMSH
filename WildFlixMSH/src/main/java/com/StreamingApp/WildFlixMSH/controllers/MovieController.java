@@ -1,8 +1,11 @@
-/*
+
 package com.StreamingApp.WildFlixMSH.controllers;
+import com.StreamingApp.WildFlixMSH.models.Category;
 import com.StreamingApp.WildFlixMSH.models.Movie;
 import com.StreamingApp.WildFlixMSH.services.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -31,18 +34,16 @@ public class MovieController {
     }
 
     @PostMapping("/admin/movies/{id}")
-    public Optional<Movie> update(@PathVariable Long id, @RequestBody Movie movie){
-        Movie movieToUpdate = movieService.getMovieById(id).get();
-        movieToUpdate.setTitle(movie.getTitle());
-        movieToUpdate.setDescription(movie.getDescription());
-        */
-/*movieToUpdate.setCategories(movie.getCategories());*//*
-
-        movieToUpdate.setUrl(movie.getUrl());
-        movieToUpdate.setDateOfRelease(movie.getDateOfRelease());
-        movieToUpdate.setIsPrivate(movie.getIsPrivate());
-        return Optional.ofNullable(movieService.createMovie(movieToUpdate));
+    public ResponseEntity<Movie> update(@PathVariable Long id, @RequestBody Movie movie){
+        Movie updatedMovie= movieService.updateMovie(id, movie);
+        if (updatedMovie != null) {
+            return new ResponseEntity<>(updatedMovie, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 
+
+
 }
-*/
+
