@@ -62,8 +62,8 @@ public class UserImplem implements UserService {
             }
 
     @Override
-    public Optional<User> getUserByEmail(String email) {
-        return userRepository.findByEmail(email);
+    public User getUserByEmail(String email) {
+        return  userRepository.findByEmail(email).orElse(null);
     }
     @Override
     public void deleteUser(Long id) {

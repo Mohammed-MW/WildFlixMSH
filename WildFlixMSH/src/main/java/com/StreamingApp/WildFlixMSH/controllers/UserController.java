@@ -16,19 +16,15 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/users")
 public class UserController {
-
-    private final UserService userService;
-
     @Autowired
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
+    UserService userService;
 
     @GetMapping("")
     public List<User> getAllUsers (){
 
         return userService.getAllUser();
     }
+
     @GetMapping("/{id}")
     public ResponseEntity<User> getUserById(@PathVariable Long id) {
         Optional<User> user = userService.getUserById(id);
@@ -40,8 +36,10 @@ public class UserController {
         return ResponseEntity.noContent().build();
     }
 
+
     @GetMapping("getUserName")
     public String getName (Authentication authentication){
+
         return authentication.getName();
     }
 
@@ -53,6 +51,48 @@ public class UserController {
         }
         return roles;
     }
+    @GetMapping("/{email}")
+    User getUserByEmail (@PathVariable String email){
 
+        return userService.getUserByEmail(email);
+    }
+    @PostMapping("/{userId}/favorites/{movieId}")
+    public ResponseEntity<?> addFavorite(
+            @PathVariable Long userId,
+            @PathVariable Long movieId
+    )
+    {
+        User user = userService.getUserById(userId)
+                .orElseThrow(() -> new NotFoundException("Utilisateur non trouvé"));
+
+//        movie video = movieService.getmovieById(movieId)
+//                .orElseThrow(() -> new NotFoundException("Vidéo non trouvée"));
+
+        Favorite favorite = new Favorite();
+        favorite.setUser(user);
+        favorite.setMovie(movie);
+        favoriteRepository.save(favorite);
+
+        return ResponseEntity.ok().build();
+    }
+
+    @DeleteMapping("/{userId}/favorites/{videoId}")
+    public ResponseEntity<?> removeFavorite(
+            @PathVariable Long userId,
+            @PathVariable Long videoId
+    ) {
+        User user = userService.getUserById(userId)
+                .orElseThrow(() -> new NotFoundException("Utilisateur non trouvé"));
+
+        Video video = videoService.getVideoById(videoId)
+                .orElseThrow(() -> new NotFoundException("Vidéo non trouvée"));
+
+        Favorite favorite = favoriteRepository.findByUserAndVideo(user, video)
+                .orElseThrow(() -> new NotFoundException("Favori non trouvé"));
+
+        favoriteRepository.delete(favorite);
+
+        return ResponseEntity.ok().build();
+    }
 
 }

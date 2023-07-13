@@ -9,6 +9,7 @@ public class DataInitializer implements CommandLineRunner {
     private final RoleRepository roleRepo;
 
     public DataInitializer(RoleRepository roleRepo) {
+
         this.roleRepo = roleRepo;
     }
 
