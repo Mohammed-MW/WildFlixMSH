@@ -1,5 +1,6 @@
 package com.StreamingApp.WildFlixMSH.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,8 +24,13 @@ public class Category {
 
 
 
+    /*@ManyToMany(mappedBy = "categories")
+    private List<Movie> movie = new ArrayList<>();*/
+    /*@JsonIgnoreProperties("movie")*/
     @ManyToMany(mappedBy = "categories")
     private List<Movie> movie = new ArrayList<>();
+
+
 
 
 }

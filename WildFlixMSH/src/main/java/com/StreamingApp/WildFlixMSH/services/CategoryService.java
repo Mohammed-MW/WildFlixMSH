@@ -1,6 +1,7 @@
 package com.StreamingApp.WildFlixMSH.services;
 
 import com.StreamingApp.WildFlixMSH.models.Category;
+import com.StreamingApp.WildFlixMSH.models.Movie;
 import com.StreamingApp.WildFlixMSH.models.Section;
 
 import java.util.List;
@@ -16,8 +17,9 @@ public interface CategoryService {
     List<Category> getAllCategories();
 
 
-
     Category findById(Long id);
+
+
 
 
 }

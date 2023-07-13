@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Map;
@@ -29,7 +30,7 @@ public class CategoryController {
     private CategoryRepository categoryRepository;
 
     @Autowired
-    MovieService movieService;
+    MovieService movieService;;
 
 
     @Autowired
@@ -60,8 +61,8 @@ public class CategoryController {
         return new ResponseEntity<>(createdCategory, HttpStatus.CREATED);
     }
 
-    @PutMapping("/admin/categorie/{id}")
-    public ResponseEntity<Category> updateCategory(@PathVariable Long id, @RequestBody Category category) {
+        @PutMapping("/admin/categorie/{id}")
+        public ResponseEntity<Category> updateCategory(@PathVariable Long id, @RequestBody Category category) {
         Category updatedCategory = categoryService.updateCategory(id, category);
         if (updatedCategory != null) {
             return new ResponseEntity<>(updatedCategory, HttpStatus.OK);
@@ -70,32 +71,7 @@ public class CategoryController {
         }
     }
 
-   /* @PutMapping("/admin/categorie/{id}")
-    public Category addMovie(@PathVariable Long id, @RequestBody Map<String, Long> request ){
-        Movie movieToAdd = movieService.getMovieById(request.get("movieId"));
-        Category category = categoryService.findById(id);
-        category.getMovie().add(movieToAdd);
 
-        return categoryService.createCategory(category);
-    }*/
-
-    /*@PutMapping("/admin/categorie/{id}")
-    public ResponseEntity<Category> addMovieToCategory(@PathVariable Long id, @RequestBody Map<String, Long> request) {
-        Category category = categoryService.findById(id);
-        if (category != null) {
-            Long movieId = request.get("movieId");
-            Movie movie = movieService.getMovieById(movieId);
-            if (movie != null) {
-                category.getMovie().add(movie);
-                Category updatedCategory = categoryService.updateCategory(id, category);
-                return new ResponseEntity<>(updatedCategory, HttpStatus.OK);
-            } else {
-                return new ResponseEntity<>(HttpStatus.NOT_FOUND); // Le film n'est pas trouvé
-            }
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND); // La catégorie n'est pas trouvée
-        }
-    }*/
 
 
 

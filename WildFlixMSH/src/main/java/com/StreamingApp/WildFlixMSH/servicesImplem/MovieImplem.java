@@ -1,4 +1,5 @@
 package com.StreamingApp.WildFlixMSH.servicesImplem;
+import com.StreamingApp.WildFlixMSH.models.Category;
 import com.StreamingApp.WildFlixMSH.models.Movie;
 import com.StreamingApp.WildFlixMSH.repositories.CategoryRepository;
 import com.StreamingApp.WildFlixMSH.repositories.MovieRepository;
@@ -7,6 +8,7 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 @Transactional
@@ -19,6 +21,11 @@ public class MovieImplem implements MovieService {
     CategoryRepository categoryRepository;
     @Override
     public Movie createMovie(Movie movie) {
+        List<Category> categories = new ArrayList<>();
+        for (Category category: movie.getCategories()){
+            categories.add(categoryRepository.findById(category.getId()).orElse(null));
+        }
+        movie.setCategories(categories);
         return movieRepository.save(movie);
     }
 
